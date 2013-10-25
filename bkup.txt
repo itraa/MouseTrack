@@ -1,0 +1,3 @@
+        {% for key, value in search_dict.iteritems() %}
+            {{ key }} : {{ value }}<br>
+        {% endfor %}

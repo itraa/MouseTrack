@@ -1,0 +1,40 @@
+,primaryjoin="Breeding.Breeding_Cage_Id==pups_info.Breeding_Cage_Id"
+
+
+        {% if search_dict %}
+            {% for key, value in search_dict.iteritems() %}
+                {{ key }} : {{ value }}<br>
+            {% endfor %}
+        {% endif %}
+
+
+
+        {% if search_list %}            
+            {% if search_dict %}
+                {% for key, value in search_dict.iteritems() %}
+                    {{ key }} : {{ value }}<br>
+                {% endfor %}
+            {% endif %}
+        {% endif %}  
+
+
+                        <td>{{ Breeding_Cage_Id }}</td>
+                        <td>{{ Male_Tag }}</td>
+                        <td>{{ Male_DOB }}</td>
+                        <td>{{ Female1_Tag }}</td>
+                        <td>{{ Female1_DOB }}</td>
+                        <td>{{ Female2_Tag }}</td>
+                        <td>{{ Female2_DOB }}</td>
+                        <td>{{ Date_Setup }}</td>
+
+
+
+
+
+
+Requirements for Dr. Subramanian
+
+Full database view
+Done-------------------Remove number column from pups view
+Actual weaning date entry option
+Done --------------Change to first weaning reminder; final weaning reminder

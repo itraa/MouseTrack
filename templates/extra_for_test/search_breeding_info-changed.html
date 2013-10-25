@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body %}
+	<h3 class ="pageSubHeader">Search Information:</h3>
+		<form action="{{url_for('search_breeding_info')}}" method="post">
+            <form class = "form-inline">
+            <input type="text" class="input-medium" placeholder="Breeding Cage" name="bc"/>
+			<button type="submit" class="btn">Search</button>
+        </form>
+{% endblock %}

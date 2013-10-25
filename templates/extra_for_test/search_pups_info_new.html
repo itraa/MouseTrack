@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block body %}
+    <h3 class ="pageSubHeader">Search Pups Information:</h3>
+        <form action="{{url_for('search_pups_info')}}" method="post">
+            <form class = "form-inline">
+                <input type="text" class="input-medium" placeholder="Breeding Cage" name="bc"/></br>
+                <button type="submit" class="btn">Search</button>
+            </form>
+        <table class ="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>Number</th>
+                <th>Breeding Cage ID</th>
+                <th>Date pups born</th>
+                <th>First Date of Weaning</th>
+                <th>Final Date of Weaning</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for dict in search_list %}
+                    <tr>
+                        <td>{{ dict.Pups_info_id }}</td>
+                        <td>{{ dict.Pups_Breeding_Cage_Id }}</td>
+                        <td>{{ dict.Date_Pups_Born }}</td>
+                        <td>{{ dict.First_Date_of_weaning }}</td>
+                        <td>{{ dict.Final_Date_of_weaning }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </form>
+{% endblock %}

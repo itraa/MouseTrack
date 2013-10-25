@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" type="text/css" href="/static/style.css" />
+        <script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
+        <script src="/static/bootstrap/js/bootstrap-datepicker.js"></script>
+        <link href="http://fonts.googleapis.com/css?family=Rancho" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Imprima" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="container-fluid">
+                <div class="navbar navbar-inverse">
+                    <div class="navbar-inner">
+                        <a class="brand" href="{{url_for('main')}}">MouseTrack</a>
+                         {% if 'username' in session %}
+                         <ul class="nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Breeding
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{url_for('add_breeding_info')}}"><i class="icon-plus"></i>Add Breeding Info</a></li>
+                                    <li><a href="{{url_for('add_pups_info')}}"><i class="icon-plus"></i>Add Pups Info</a></li>
+                                    <li><a href="{{url_for('search_breeding_info')}}"><i class="icon-search"></i>Search Breeding Info</a></li>
+                                    <li><a href="{{url_for('search_pups_info')}}"><i class="icon-search"></i>Search Pups Info</a></li>
+                                    <li><a href="{{url_for('remove_breeding_info')}}"><i class="icon-minus"></i>Delete Breeding Info</a></li>
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li><a href="{{url_for('login')}}">Login </a></li>
+                        {% endif %}
+                            <li class="navhome"><a href="{{url_for('login')}}"><i class="icon-leaf"></i>My Profile</a></li>
+                            <li class><a href="/about/"><i class="icon-tag"></i>About</a></li>
+                            <li><a href="/contact/"><i class="icon-envelope"></i>Contact Us</a></li>
+                         </ul>
+                    </div>
+                </div>
+                <div id="content">
+                    {% block body %}{% endblock %}
+                </div>
+                <div id="flashed">
+                    {% with messages = get_flashed_messages() %}
+                    {% for message in messages %}
+                        {{message}}
+                    {% endfor %}
+                    {% endwith %}
+                </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+    	<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/static/bootstrap/js/bootstrap-datepicker.js"></script>
+    </body>
+</html>

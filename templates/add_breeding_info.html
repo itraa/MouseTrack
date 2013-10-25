@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container"> 
+	<h3 class="pageSubHeader">Add the breeding information</h3>
+		<form action="{{url_for('add_breeding_info')}}" method="post">
+            <form class="form-horizontal">
+                <input type="text"class="input-medium" placeholder="Breeding Cage" name="bc"/></br>
+				<input type="text" class="input-medium" placeholder="Male Tag" name="maletag"/></br>
+                <div class="input-append date"  data-date-format="yyyy-mm-dd">
+                    <input class="span2" id="dp" size="16" type="text" name="maledob" placeholder="Male DOB" readonly>
+                    <span class="add-on"><i class="icon-calendar"></i></span>
+                </div>
+    			<input type="text" class="input-medium" placeholder="Female1 Tag" name="female1tag"/></br>
+                <div class="input-append date"  data-date-format="yyyy-mm-dd">
+                    <input class="span2" id="dp1" size="16" type="text" name="female1dob" placeholder="Female1 DOB" readonly>
+                    <span class="add-on"><i class="icon-calendar"></i></span>
+                </div>
+				<input type="text" class="input-medium" placeholder="Female2 Tag" name="female2tag"/></br>
+                <div class="input-append date"  data-date-format="yyyy-mm-dd">
+                    <input class="span2" id="dp2" size="16" type="text" name="female2dob" placeholder="Female2 DOB" readonly>
+                    <span class="add-on"><i class="icon-calendar"></i></span>
+                </div>				
+                <div class="input-append date"  data-date-format="yyyy-mm-dd">
+                    <input class="span2" id="dp3" size="16" type="text" name="dateofsetup" placeholder="Date of setup" readonly>
+                    <span class="add-on"><i class="icon-calendar"></i></span>
+                </div>            	
+                <script>
+                    $('#dp').datepicker({
+                      format: 'yyyy-mm-dd'
+                    });
+                </script>
+                <script>
+                    $('#dp1').datepicker({
+                      format: 'yyyy-mm-dd'
+                    });
+                </script>
+                <script>
+                    $('#dp2').datepicker({
+                      format: 'yyyy-mm-dd'
+                    });
+                </script>
+                <script>
+                    $('#dp3').datepicker({
+                      format: 'yyyy-mm-dd'
+                    });
+                </script>
+                <button type="submit" class="btn btn-inverse">Add</button>
+        	</form>
+		</form>
+</div>
+{% endblock %}

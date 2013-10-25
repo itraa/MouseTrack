@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block body %}
+    <h3 class ="pageSubHeader">Search Breeding Cage Information:</h3>
+        <form action="{{url_for('search_breeding_info')}}" method="post">
+            <form class = "form-inline">
+                <input type="text" class="input-medium" placeholder="Breeding Cage" name="bc"/></br>
+                <button type="submit" class="btn btn-inverse">Search</button>
+            </form>
+        <table class ="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>Breeding Cage ID</th>
+                <th>Male Tag</th>
+                <th>Male DOB</th>
+                <th>Female1 Tag</th>
+                <th>Female1 DOB</th>
+                <th>Female2 Tag</th>
+                <th>Female2 DOB</th>
+                <th>Date of setup</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for key, values in search_dict %}
+                    <tr>
+                        <td>{{ values.Pups_info_id }}</td>
+                        <td>{{ values.Pups_Breeding_Cage_Id }}</td>
+                        <td>{{ values.Date_Pups_Born }}</td>
+                        <td>{{ values.First_Date_of_weaning }}</td>
+                        <td>{{ values.Final_Date_of_weaning }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </form>
+{% endblock %}

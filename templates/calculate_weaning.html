@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body %}
+    <h3 class ="pageSubHeader">Calculate Weaning:</h3>
+        {% if output_dict %}
+            {% for key, value in output_dict.iteritems() %}
+                {{ key }} : {{ value }}<br>
+            {% endfor %}
+        {% endif %}
+{% endblock %}

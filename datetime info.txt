@@ -1,0 +1,5 @@
+
+In order to use a date field use this if you cannot do type='date' in the html. 
+datetime.date(*map(int,flask.request.form['dateofsetup'].split(','))),
+
+The * is a splat operator.

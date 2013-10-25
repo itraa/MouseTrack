@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block body %}
+	<h3 class ="pageSubHeader">Add the breeding information:</h3>
+		<form action="{{url_for('add_breeding_info')}}" method="post">
+            <form class="form-horizontal">
+                <input type="text" class="input-medium" placeholder="Breeding Cage" name="bc"/></br>
+				<input type="text" class="input-medium" placeholder="Male Tag" name="maletag"/></br>
+				<input type="date" class="input-medium" placeholder="Male DOB" name="maledob"/></br>
+				<input type="text" class="input-medium" placeholder="Female1 Tag" name="female1tag"/></br>
+				<input type="date" class="input-medium" placeholder="Female1 DOB" name="female1dob"/></br>
+				<input type="text" class="input-medium" placeholder="Female2 Tag" name="female2tag"/></br>
+				<input type="date" class="input-medium" placeholder="Female2 DOB" name="female2dob"/></br>
+				<input type="date" class="input-medium" placeholder="Date of Setup" name="dateofsetup"/></br>
+				<input type="date" class="input-medium" placeholder="Date pups born" name="datepupsborn"/></br>
+            	<button type="submit" class="btn">Add</button>
+        	</form>
+		</form>
+{% endblock %}
