@@ -57,8 +57,8 @@ app.add_url_rule('/remove_breeding_info/',
 
 def weaning_reminder():
 
-    global Login.username
-    print "Test %s" % Login.username
+#    global Login.username
+#    print "Test %s" % Login.username
     __table__ = pups_info
     first_output = __table__.query.with_entities(__table__.Pups_Breeding_Cage_Id).filter_by(First_Date_of_weaning=date.today()).all()
     final_output = __table__.query.with_entities(__table__.Pups_Breeding_Cage_Id).filter_by(Final_Date_of_weaning=date.today()).all()
@@ -72,8 +72,8 @@ def weaning_reminder():
                 final_email_list.append(str(final_each[i]))
 
         final_msg = Message('Final weaning reminder!',
-                    sender='itraa.narayan@gmail.com.com',
-                    recipients=['itraa.narayan@gmail.com'])
+                    sender='xx@gmail.com.com',
+                    recipients=['xx@gmail.com'])
         final_msg.body = 'This is the final reminder for weaning pups from the breeding cage(s): %s' % final_email_list
 
         mail.send(final_msg)
@@ -84,17 +84,17 @@ def weaning_reminder():
                 first_email_list.append(str(first_each[i]))
 
         first_msg = Message('First weaning reminder!',
-                    sender='itraa.narayan@gmail.com.com',
-                    recipients=['itraa.narayan@gmail.com'])
+                    sender='xx@gmail.com.com',
+                    recipients=['xx@gmail.com'])
         first_msg.body = 'This is the first reminder for weaning pups from the breeding cage(s): %s' % first_email_list
 
         mail.send(first_msg)
 
 
-weaning_reminder() 
-#sched = Scheduler()
-#sched.start()
-#job = sched.add_cron_job(weaning_reminder, hour=23)
+#weaning_reminder() 
+sched = Scheduler()
+sched.start()
+job = sched.add_cron_job(weaning_reminder, minute=38)
 
 @app.errorhandler(404)
 def page_not_found(error):

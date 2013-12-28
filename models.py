@@ -13,8 +13,8 @@ app.config.update(
     MAIL_PORT = 465,
     MAIL_USE_TLS = False,
     MAIL_USE_SSL = True,
-    MAIL_USERNAME = 'itraa.narayan@gmail.com',
-    MAIL_PASSWORD = 'ParupuRaghava1624')
+    MAIL_USERNAME = 'xx@gmail.com',
+    MAIL_PASSWORD = 'xxxxxxxx')
 
 #administrator list
 ADMINS = ['itraa.narayan@gmail.com']
